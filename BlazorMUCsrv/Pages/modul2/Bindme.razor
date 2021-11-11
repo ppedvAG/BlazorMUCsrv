@@ -1,0 +1,16 @@
+﻿@page "/bind"
+<div style="background-color:@wert">
+    <h3>Bindme</h3>
+    <input @bind-value="wert" @bind-value:event="onchange" />
+    <input @bind="wert" />
+   
+    @wert
+    <hr />
+    <Route par1="23" @ref="route1"></Route>
+    <p> @route1.par1=42</p>
+
+</div>
+    @code {
+        string wert;
+        Route route1 ;
+    }
