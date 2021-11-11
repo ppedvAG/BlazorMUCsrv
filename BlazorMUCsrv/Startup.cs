@@ -1,4 +1,5 @@
 using BlazorMUCsrv.Data;
+using BlazorMUCsrv.Pages.modul4;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,7 @@ namespace BlazorMUCsrv
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<ChatVM>();
          
         }
 
