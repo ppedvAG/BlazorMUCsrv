@@ -34,7 +34,7 @@
     }
     protected override void OnInitialized()
     {
-        vm.onAdd += () => InvokeAsync(StateHasChanged);
+        vm.onAdd += (_,__) => InvokeAsync(StateHasChanged);
 
     }
 }
