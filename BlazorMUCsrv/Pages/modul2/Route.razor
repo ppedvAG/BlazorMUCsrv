@@ -1,9 +1,14 @@
 ﻿@page "/route"
-@page "/max"
+@page "/max/{par1:int}"
 
 
-<h3>Route</h3>
+<h3>Route @par1</h3>
 
 @code {
+    [Parameter]
+    public int par1 { get; set; }
+
+    // http://domain/crm/rechnungen/23?top=100&skip=100
+    //http://domain/crm/kunden/123
 
 }
