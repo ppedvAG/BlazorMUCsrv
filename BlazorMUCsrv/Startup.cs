@@ -31,6 +31,7 @@ namespace BlazorMUCsrv
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<ChatVM>();
+            services.AddHttpClient();
          
         }
 
