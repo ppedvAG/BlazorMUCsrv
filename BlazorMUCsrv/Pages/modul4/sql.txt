@@ -1,0 +1,7 @@
+﻿3 x nuget  Pakete
+Connection aus Dem Sertver Eplorer
+Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=northwind;Integrated Security=True
+
+appsettings.json
+
+paket amaneger konsole
