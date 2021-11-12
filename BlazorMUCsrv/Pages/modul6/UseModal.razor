@@ -1,0 +1,23 @@
+﻿@page "/modal"
+<h3>UseModal</h3>
+<button @onclick="show" class="btn btn-danger">open</button>
+<Modal @ref="dialog" Titel="toller Dialog!" onModal="Save">
+    <p>Ihr ONline Passwort</p>
+    <input class="form-control" @bind="Passwort" />
+
+</Modal>
+@Passwort
+@code {
+    Modal dialog;
+    string Passwort;
+    void show()
+    {
+        dialog.Show();
+
+    }
+    void Save()
+    {
+        Passwort = "saved...";
+    }
+
+}
