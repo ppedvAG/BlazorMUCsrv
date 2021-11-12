@@ -1,9 +1,15 @@
 ﻿<h3>HTMLTemplate</h3>
-@ChildContent
+@*@ChildContent*@
 
 
 @code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
+    //[Parameter]
+    //public RenderFragment ChildContent { get; set; }
 
+
+    [Parameter]
+    public RenderFragment Kind1 { get; set; }
+    [Parameter]
+    public RenderFragment Kind2 { get; set; }
 }
+
