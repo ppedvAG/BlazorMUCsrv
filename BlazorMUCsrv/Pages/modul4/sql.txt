@@ -5,3 +5,8 @@ Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=northwind;Integrated Security
 appsettings.json
 
 paket amaneger konsole
+Scaffold-DbContext "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=northwind;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -outputdir Models
+
+startup.cs 
+  services.AddDbContext<northwindContext>(o =>
+            o.UseSqlServer(Configuration.GetConnectionString("northwind")));
