@@ -10,10 +10,8 @@
 }
 else
 {
-
+    @EmptyDataTemplate
 }
-
-@ItemTemplate
 
 
 @FooterTemplate
@@ -29,7 +27,15 @@ else
     public RenderFragment EmptyDataTemplate { get; set; }
 
     [Parameter]
-    public List<ModelType> Items { get; set; }
+    public IEnumerable<ModelType> Items { get; set; }
     [Parameter]
     public Func<IEnumerable<ModelType>> SelectMethod { get; set; }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Items = SelectMethod.Invoke();
+            StateHasChanged();
+        }
+    }
 }
