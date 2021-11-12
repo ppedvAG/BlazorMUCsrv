@@ -1,0 +1,13 @@
+﻿<div @attributes="AndereAttribute">
+    <h3>ChildCascadingComponent</h3>
+    <div>@Par1</div>
+    <div>@Titel</div>
+</div>
+@code {
+    [CascadingParameter]
+    public string Par1 { get; set; }
+    [Parameter]
+    public string Titel { get; set; }
+    [Parameter(CaptureUnmatchedValues =true)]
+    public Dictionary<string, object> AndereAttribute { get; set; }
+}

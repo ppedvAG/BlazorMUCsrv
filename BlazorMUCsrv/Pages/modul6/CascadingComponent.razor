@@ -1,0 +1,12 @@
+﻿@page "/casc"
+<h3>CascadingComponent</h3>
+<CascadingValue Name="Par1" Value="@wert">
+    <ChildCascadingComponent Titel="Das ist der Titel" style="background-color:yellow" @ref="comp1">
+
+    </ChildCascadingComponent>
+
+</CascadingValue>
+@code {
+    string wert = "toll";
+    ChildCascadingComponent comp1;
+}
