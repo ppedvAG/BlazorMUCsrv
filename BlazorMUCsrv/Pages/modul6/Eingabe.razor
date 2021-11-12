@@ -1,0 +1,12 @@
+﻿@page "/eingabe"
+<h3>Eingabe</h3>
+<input @attributes="MyProperty" />
+@code {
+    [Parameter]
+    public Dictionary<string, object> MyProperty { get; set; } =
+        new Dictionary<string, object>()
+        {
+        { "required","true"},
+            {"maxlength","10" }
+                };
+}
