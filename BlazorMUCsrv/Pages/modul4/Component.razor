@@ -1,0 +1,16 @@
+﻿@using BlazorMUCsrv.Models
+@using Microsoft.EntityFrameworkCore
+@inject northwindContext db
+<h3>Component</h3>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        var x = await db.Customers.ToListAsync();
+        ///
+
+
+    }
+
+}
