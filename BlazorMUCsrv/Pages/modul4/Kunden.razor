@@ -1,5 +1,16 @@
-﻿<h3>Kunden</h3>
+﻿@page "/kunden"
+@using BlazorMUCsrv.Models 
+@inject northwindContext db 
+<h3>Kunden</h3>
+suche:<input @bind="suche"/>
+<ul>
+    @foreach (var item in db.Customers.Where(x=>x.CompanyName.Contains(suche)))
+    {
+        <li><a href="detail/@item.CustomerId">  @item.CompanyName</a></li>
 
+    }
+</ul>
 @code {
+    string suche;
 
 }
