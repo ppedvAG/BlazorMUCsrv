@@ -1,0 +1,35 @@
+﻿@typeparam ModelType
+@HeaderTemplate
+
+@if (Items?.Any() ?? false)
+{
+    @foreach (var item in Items)
+    {
+        @ItemTemplate(item)
+    }
+}
+else
+{
+
+}
+
+@ItemTemplate
+
+
+@FooterTemplate
+
+@code {
+    [Parameter]
+    public RenderFragment<ModelType> ItemTemplate { get; set; }
+    [Parameter]
+    public RenderFragment HeaderTemplate { get; set; }
+    [Parameter]
+    public RenderFragment FooterTemplate { get; set; }
+    [Parameter]
+    public RenderFragment EmptyDataTemplate { get; set; }
+
+    [Parameter]
+    public List<ModelType> Items { get; set; }
+    [Parameter]
+    public Func<IEnumerable<ModelType>> SelectMethod { get; set; }
+}
