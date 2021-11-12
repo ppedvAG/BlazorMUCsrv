@@ -1,6 +1,6 @@
 ﻿@page "/person"
-<h3>PersonEdit</h3>
-<EditForm Model="myPerson" OnSubmit="speichern"  >
+<h3>PersonEdit</h3> 
+<EditForm  OnSubmit="speichern" EditContext="_EditContext" >
     <DataAnnotationsValidator></DataAnnotationsValidator>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Name</label>
@@ -28,9 +28,15 @@
 </EditForm>
 @code {
     Person myPerson = new Person();
+    EditContext _EditContext;
+
+    protected override void OnInitialized()
+    {
+        _EditContext = new EditContext(myPerson);
+        //statt Model zuweisen
+    }
     void speichern()
-        {
+    {
 
-        }
-
+    }
     }
